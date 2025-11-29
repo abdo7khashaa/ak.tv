@@ -3,56 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قنوات بي إن سبورت</title>
+    <title>AK TV - بث مباشر</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            direction: rtl;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
         }
-        .container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+        header {
+            background: #000;
+            padding: 20px 0;
+        }
+        header img {
+            width: 150px;
         }
         h1 {
-            color: #003366;
+            font-size: 36px;
+            color: #4CAF50;
+            margin: 20px 0;
         }
-        .link {
+        .content {
+            padding: 40px 20px;
+        }
+        .message {
+            font-size: 22px;
+            color: #555;
+            margin: 20px 0;
+        }
+        .donation {
+            font-size: 20px;
+            color: #d9534f;
+            margin-top: 20px;
+        }
+        .channels {
+            margin-top: 40px;
+        }
+        .channels a {
             display: block;
-            background-color: #003366;
-            color: #fff;
-            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: background-color 0.3s;
+            font-size: 20px;
         }
-        .link:hover {
-            background-color: #005599;
+        .channels a:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>قنوات بي إن سبورت</h1>
-        <a href="http://h.ottdbcn.com:8080/bn1hd/tracks-v1a1/mono.m3u8" class="link" target="_blank">beIN Sport 1</a>
-        <a href="http://h.ottdbcn.com:8080/bn2hd/tracks-v1a1/mono.m3u8" class="link" target="_blank">beIN Sport 2</a>
-        <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" class="link" target="_blank">beIN Sport 3</a>
-        <a href="http://h.ottdbcn.com:8080/bn4hd/tracks-v1a1/mono.m3u8" class="link" target="_blank">beIN Sport 4</a>
+<header>
+    <img src="https://f.top4top.io/p_3620rw0h71.png" alt="AK TV Logo">
+</header>
+
+<h1>AK TV</h1>
+
+<div class="content">
+    <div class="message">
+        نعم لدعم الفقراء من عشاق كرة القدم
     </div>
+
+    <div class="donation">
+        هذا الموقع صدقة جارية على روح الحاج خاشع الراوي
+    </div>
+
+    <div class="channels">
+        <a href="http://h.ottdbcn.com:8080/bn1hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 1</a>
+        <a href="http://h.ottdbcn.com:8080/bn2hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 2</a>
+        <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 3</a>
+        <a href="http://h.ottdbcn.com:8080/bn4hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 4</a>
+    </div>
+</div>
 
 </body>
 </html>
