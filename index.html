@@ -84,6 +84,32 @@
             transform: translateY(-5px);
         }
 
+        /* تصميم رابط قناة التليجرام */
+        .telegram-link {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #fff;
+            padding: 15px 30px;
+            margin: 20px 0;
+            text-decoration: none;
+            font-size: 22px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 60%;
+            max-width: 400px;
+        }
+
+        .telegram-link:hover {
+            background-color: #007bb5;
+            transform: translateY(-5px);
+        }
+
+        .telegram-icon {
+            margin-left: 10px;
+            width: 24px;
+            vertical-align: middle;
+        }
+
         /* تصميم الصفحة للهواتف */
         @media (max-width: 768px) {
             h1 {
@@ -91,6 +117,10 @@
             }
 
             .channels a {
+                width: 80%;
+            }
+
+            .telegram-link {
                 width: 80%;
             }
 
@@ -131,6 +161,12 @@
     <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 3</a>
     <a href="http://h.ottdbcn.com:8080/bn4hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 4</a>
 </div>
+
+<!-- رابط قناة التليجرام -->
+<a class="telegram-link" href="https://t.me/tvaktv" target="_blank">
+    تابعوا قناتنا على التليجرام
+    <img class="telegram-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_Logo_2019.svg/600px-Telegram_Logo_2019.svg.png" alt="Telegram">
+</a>
 
 </body>
 </html>
