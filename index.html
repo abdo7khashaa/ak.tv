@@ -57,6 +57,43 @@
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
 
+        /* شريط البحث */
+        .search-bar {
+            margin-top: 30px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #333;
+            border-radius: 50px;
+            padding: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            background-color: #e6b800;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #d1a400;
+        }
+
         /* تصميم روابط القنوات */
         .channels {
             margin-top: 40px;
@@ -131,6 +168,15 @@
             .donation {
                 font-size: 18px;
             }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -154,12 +200,25 @@
     هذا الموقع صدقة جارية على روح الحاج خاشع الراوي
 </div>
 
+<!-- شريط البحث -->
+<div class="search-bar">
+    <input type="text" placeholder="ابحث عن القناة...">
+    <button>بحث</button>
+</div>
+
 <!-- روابط قنوات beIN Sports -->
 <div class="channels">
     <a href="http://h.ottdbcn.com:8080/bn1hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 1</a>
     <a href="http://h.ottdbcn.com:8080/bn2hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 2</a>
     <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 3</a>
     <a href="http://h.ottdbcn.com:8080/bn4hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 4</a>
+</div>
+
+<!-- روابط قنوات رياضية عراقية -->
+<div class="channels">
+    <a href="http://82.198.251.24:2082/live/play/V0V0WmRXOHpZMW95Tm5KM2VXOU1RVGRJT1dkc09VTnJlRmRCVm5vMVQyUnJXREF5VnpaRE1HMHJhejA9/1142953" target="_blank">الرابعـة 1</a>
+    <a href="http://149.57.87.12/live/65787/54353/113629.m3u8?token=Tm5tdHZ3bEZJNmZqQ3Fj" target="_blank">الرابعـة 2</a>
+    <a href="http://82.198.251.24:2082/live/play/TjNCQ01saHdWMUpUV2pCbFptVlVVWEp0ZG1Wb1EydHNkbGQ0Ulc4MFEzWlBaR1pRUldoT01GbFJhejA9/156475" target="_blank">العراقية الرياضية</a>
 </div>
 
 <!-- رابط قناة التليجرام -->
