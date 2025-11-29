@@ -5,83 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK TV - بث مباشر</title>
     <style>
+        /* إعدادات عامة للصفحة */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            direction: rtl;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1e1e1e, #343a40);
+            color: #fff;
             margin: 0;
             padding: 0;
+            text-align: center;
+            direction: rtl;
         }
+
+        /* الشعار */
         header {
-            background: #000;
+            background: #111;
             padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
+
         header img {
-            width: 150px;
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
         }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        /* العنوان الرئيسي */
         h1 {
-            font-size: 36px;
-            color: #4CAF50;
-            margin: 20px 0;
+            font-size: 48px;
+            margin-top: 20px;
+            color: #e6b800;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
         }
-        .content {
-            padding: 40px 20px;
-        }
+
+        /* الرسالة الدعائية */
         .message {
-            font-size: 22px;
-            color: #555;
+            font-size: 24px;
             margin: 20px 0;
+            color: #ddd;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
+
+        /* رسالة الصدقة الجارية */
         .donation {
             font-size: 20px;
-            color: #d9534f;
+            color: #e74c3c;
             margin-top: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
         }
+
+        /* تصميم روابط القنوات */
         .channels {
             margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .channels a {
             display: block;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
+            background: #e6b800;
+            color: #111;
+            padding: 15px 30px;
             margin: 10px 0;
-            border-radius: 5px;
-            font-size: 20px;
+            text-decoration: none;
+            font-size: 22px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 60%;
+            max-width: 400px;
         }
+
         .channels a:hover {
-            background-color: #45a049;
+            background-color: #d1a400;
+            transform: translateY(-5px);
+        }
+
+        /* تصميم الصفحة للهواتف */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .channels a {
+                width: 80%;
+            }
+
+            .message {
+                font-size: 20px;
+            }
+
+            .donation {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- الشعار -->
 <header>
     <img src="https://f.top4top.io/p_3620rw0h71.png" alt="AK TV Logo">
 </header>
 
+<!-- العنوان الرئيسي -->
 <h1>AK TV</h1>
 
-<div class="content">
-    <div class="message">
-        نعم لدعم الفقراء من عشاق كرة القدم
-    </div>
+<!-- الرسالة الدعائية -->
+<div class="message">
+    نعم لدعم الفقراء من عشاق كرة القدم
+</div>
 
-    <div class="donation">
-        هذا الموقع صدقة جارية على روح الحاج خاشع الراوي
-    </div>
+<!-- رسالة الصدقة الجارية -->
+<div class="donation">
+    هذا الموقع صدقة جارية على روح الحاج خاشع الراوي
+</div>
 
-    <div class="channels">
-        <a href="http://h.ottdbcn.com:8080/bn1hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 1</a>
-        <a href="http://h.ottdbcn.com:8080/bn2hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 2</a>
-        <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 3</a>
-        <a href="http://stream.mytvplus.net:7006/sport/ch5/ch5_1080.m3u8" target="_blank">beIN Sports 5</a>
-    </div>
+<!-- روابط قنوات beIN Sports -->
+<div class="channels">
+    <a href="http://h.ottdbcn.com:8080/bn1hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 1</a>
+    <a href="http://h.ottdbcn.com:8080/bn2hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 2</a>
+    <a href="http://h.ottdbcn.com:8080/bn3hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 3</a>
+    <a href="http://h.ottdbcn.com:8080/bn4hd/tracks-v1a1/mono.m3u8" target="_blank">beIN Sports 4</a>
 </div>
 
 </body>
 </html>
-
