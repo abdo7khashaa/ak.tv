@@ -392,6 +392,14 @@
             background: #000;
         }
 
+        #playerFrame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            background: #000;
+        }
+
         /* علامة مائية (الشعار + نص) */
         .watermark {
             position: absolute;
@@ -583,7 +591,7 @@
         <aside class="player-panel">
             <div class="player-title" id="player-title">لا توجد قناة/محتوى قيد التشغيل حاليًا</div>
             <div class="video-wrapper">
-                <video id="videoPlayer" controls playsinline></video>
+                <iframe id="playerFrame" allowfullscreen frameborder="0"></iframe>
 
                 <!-- الشعار + النص داخل الفيديو -->
                 <div class="watermark" id="watermark">
@@ -602,8 +610,6 @@
 </div>
 
 <!-- مكتبة HLS -->
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
 <script>
     /*****************************
      * 1) إعداد بيانات الدخول
@@ -1398,7 +1404,7 @@ const liveGroups = {
         },
         {
             name: "BEIN SPORT 3 4k",
-            url: "http://45.155.90.27:8080/live/224431844009/618211192054/96396.m3u8?token=yybXyzX.yUaHUay.X.dazUya.yczHbdcU.X.y.IQ.m3u8.9e5ff00bdd191e25902e6c463ed41317ef3c4ef7d829a74cdc3f8ccf1afd8d91...NGhvc3QuY2M6ODA4MA==",
+            url: "http://4host.cc:8080/live/224431844009/618211192054/96396.m3u8",
             quality: "4K",
             note: ""
         },
@@ -9683,40 +9689,21 @@ const liveGroups = {
     /*****************************
      * 5) تشغيل روابط m3u8
      *****************************/
-    const video = document.getElementById("videoPlayer");
+    const playerFrame = document.getElementById("playerFrame");
     const playerTitle = document.getElementById("player-title");
     const playerInfo = document.getElementById("player-info");
-    let hls = null;
-
+    
     function playStream(url, name) {
         if (!url) return;
 
-        if (hls) {
-            hls.destroy();
-            hls = null;
-        }
-
-        const isHlsLike = url.endsWith(".m3u8") || url.endsWith(".m3u");
-
-        if (isHlsLike && Hls.isSupported()) {
-            hls = new Hls({ enableWorker: true });
-            hls.loadSource(url);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play().catch(() => {});
-            });
-        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-            video.src = url;
-            video.play().catch(() => {});
-        } else {
-            video.src = url;
-            video.play().catch(() => {});
-        }
+        // تشغيل الرابط داخل IFRAME مباشر بدون أي مكتبات خارجية
+        // المتصفح نفسه هو الذي يجلب التوكن والهيدرز مثل كروم
+        playerFrame.src = url;
 
         playerTitle.textContent = name;
         playerInfo.innerHTML = `
             يتم الآن تشغيل: <strong>${name}</strong><br/>
-            في حال لم تعمل القناة قد يكون السيرفر مغلقًا أو يمنع التشغيل عبر المتصفح (CORS).
+            في حال لم تعمل القناة قد يحتاج الرابط لفتح مباشر في المتصفح أو أن السيرفر متوقف مؤقتًا.
         `;
     }
 
@@ -9737,18 +9724,7 @@ const liveGroups = {
         }
     });
 
-    // دعم Safari و iPhone
-    if (video) {
-        video.addEventListener("webkitbeginfullscreen", () => {
-            document.querySelector(".video-wrapper").classList.add("video-fullscreen");
-        });
-
-        video.addEventListener("webkitendfullscreen", () => {
-            document.querySelector(".video-wrapper").classList.remove("video-fullscreen");
-        });
-    }
 </script>
 
 </body>
 </html>
-
